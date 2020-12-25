@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -34,8 +34,9 @@ namespace ServiceRest_042_LinggaBuwonoJati
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(query);
-                msg = "Gagal";
+                msg = "GAGAL";
             }
+
             return msg;
         }
 
@@ -45,7 +46,6 @@ namespace ServiceRest_042_LinggaBuwonoJati
 
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-LDV7NOV;Initial Catalog=\"TI UMY\";Persist Security Info=True;User ID=sa;Password=2712");
             string query = "select Nama, NIM, Prodi, Angkatan from dbo.Mahasiswa";
-
             SqlCommand com = new SqlCommand(query, con);
 
             try
@@ -56,8 +56,8 @@ namespace ServiceRest_042_LinggaBuwonoJati
                 while (reader.Read())
                 {
                     Mahasiswa mhs = new Mahasiswa();
-                    mhs.nama = reader.GetString(0);
-                    mhs.nim = reader.GetString(1);
+                    mhs.nim = reader.GetString(0);
+                    mhs.nama = reader.GetString(1);
                     mhs.prodi = reader.GetString(2);
                     mhs.angkatan = reader.GetString(3);
 
@@ -84,11 +84,10 @@ namespace ServiceRest_042_LinggaBuwonoJati
             {
                 con.Open();
                 SqlDataReader reader = com.ExecuteReader();
-
                 while (reader.Read())
                 {
-                    mhs.nama = reader.GetString(0);
-                    mhs.nim = reader.GetString(1);
+                    mhs.nim = reader.GetString(0);
+                    mhs.nama = reader.GetString(1);
                     mhs.prodi = reader.GetString(2);
                     mhs.angkatan = reader.GetString(3);
                 }

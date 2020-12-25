@@ -29,7 +29,7 @@ namespace Exercise2_042_LinggaBuwonoJati
             var postdata = new WebClient();
             postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
             string response = postdata.UploadString(baseUrl + "Mahasiswa", data);
-            Console.WriteLine(response);
+           
         }
 
         public Form1()
