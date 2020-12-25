@@ -9,7 +9,7 @@ using System.Text;
 namespace ServiceRest_042_LinggaBuwonoJati
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    public class Service1 : IService1
+    public class TI_UMY : ITI_UMY
     {
         public string CreateMahasiswa(Mahasiswa mhs)
         {
@@ -34,9 +34,8 @@ namespace ServiceRest_042_LinggaBuwonoJati
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(query);
-                msg = "GAGAL";
+                msg = "Gagal";
             }
-
             return msg;
         }
 
@@ -46,6 +45,7 @@ namespace ServiceRest_042_LinggaBuwonoJati
 
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-LDV7NOV;Initial Catalog=\"TI UMY\";Persist Security Info=True;User ID=sa;Password=2712");
             string query = "select Nama, NIM, Prodi, Angkatan from dbo.Mahasiswa";
+
             SqlCommand com = new SqlCommand(query, con);
 
             try
@@ -56,8 +56,8 @@ namespace ServiceRest_042_LinggaBuwonoJati
                 while (reader.Read())
                 {
                     Mahasiswa mhs = new Mahasiswa();
-                    mhs.nim = reader.GetString(0);
-                    mhs.nama = reader.GetString(1);
+                    mhs.nama = reader.GetString(0);
+                    mhs.nim = reader.GetString(1);
                     mhs.prodi = reader.GetString(2);
                     mhs.angkatan = reader.GetString(3);
 
@@ -84,10 +84,11 @@ namespace ServiceRest_042_LinggaBuwonoJati
             {
                 con.Open();
                 SqlDataReader reader = com.ExecuteReader();
+
                 while (reader.Read())
                 {
-                    mhs.nim = reader.GetString(0);
-                    mhs.nama = reader.GetString(1);
+                    mhs.nama = reader.GetString(0);
+                    mhs.nim = reader.GetString(1);
                     mhs.prodi = reader.GetString(2);
                     mhs.angkatan = reader.GetString(3);
                 }

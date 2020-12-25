@@ -82,13 +82,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ServiceRest_042_LinggaBuwonoJati\ServiceRest_042_LinggaBuwonoJati.csproj">
-      <Project>{ED1D8A11-C869-47B1-A895-5FD324EF0C61}</Project>
-      <Name>ServiceRest_042_LinggaBuwonoJati</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <ProjectReference Include="..\ServiceRest_042_LinggaBuwonoJati\ServiceRest_042_LinggaBuwonoJati.csproj">
+      <Project>{A1A339E7-FD9E-4C33-830C-F551684D0BAA}</Project>
+      <Name>ServiceRest_042_LinggaBuwonoJati</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

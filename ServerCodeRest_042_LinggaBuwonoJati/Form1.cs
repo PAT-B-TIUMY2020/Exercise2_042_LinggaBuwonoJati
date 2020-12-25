@@ -32,7 +32,7 @@ namespace ServerCodeRest_042_LinggaBuwonoJati
             {
                 Task.Factory.StartNew(() =>
                 {
-                    hostObject = new ServiceHost(typeof(Service1));
+                    hostObject = new ServiceHost(typeof(TI_UMY));
                     hostObject.Open();
                 });
                 label1.Text = "Server ON";
